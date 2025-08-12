@@ -1,53 +1,86 @@
 # 📄 Claude Max – Microplan Ingestion
 
-## Overview
-- Builds Excel templates **from MDMS JSON schema**.
-- Supports **localized headers**, **color coding**, **dropdowns** (normal + cascading), and **multi-select**.
-- Uses hidden sheets for **parent-child** and **localization** mappings.
+Here’s a polished version of your **Claude Max Usage Report** that keeps the structure but makes it presentation-ready, concise, and easy to read:
 
 ---
 
-## Key Features
-1. **Schema-Based Columns**
-   - Reads `stringProperties`, `numberProperties`, `enumProperties` from MDMS.
-   - Applies color, order, required flags, and hide/freeze settings.
+# 📄 Claude Max Usage Report
 
-2. **Headers**
-   - **Row 1 (hidden):** Technical names.
-   - **Row 2 (visible):** Localized names with color.
+## 1️⃣ Project Context
 
-3. **Dropdowns**
-   - **Enum:** Simple value lists.
-   - **Cascading:** Next column’s values depend on previous column’s selection.
-   - **Multi-Select:** Multiple visible selection columns + one hidden concatenated column.
-
-4. **Hidden Mapping Sheets**
-   - Store **parent → child** boundaries.
-   - Store **level → boundaries**.
-   - Store localization mappings.
-
-5. **Cell Locking**
-   - All cells unlocked by default.
-   - Freeze columns once filled if `freezeColumnIfFilled=true`.
-
-6. **Sheet Protection**
-   - Password-protected after setup.
-   - Allows editing only unlocked cells.
+* **Project Name:** Microplan Ingestion
+* **Service Name:** `excel-ingestion`
+* **Purpose:** Automate Excel ingestion and validation for the microplan facility sheet, with schema-driven configuration, cascading dropdowns, and rich formatting.
 
 ---
 
-## Workflow
-1. Read schema from MDMS.
-2. Generate columns & headers.
-3. Add dropdowns (enum/cascading).
-4. Expand multi-select columns.
-5. Lock/freeze cells as per rules.
-6. Protect sheet and deliver to user.
+## 2️⃣ Overview
+
+* Generates Excel templates **directly from MDMS JSON schema**.
+* Supports:
+
+  * Localized headers
+  * Color coding
+  * Dropdowns (simple + cascading)
+  * Multi-select values
+* Uses **hidden sheets** for mapping parent–child relationships and localization.
 
 ---
 
-## ⚠️ Point to Note for Users
-- Always **review every change** suggested by Claude — its refactoring may not always be accurate.
-- **Test working use cases** after each change before committing.
-- Commit **small, working changes** rather than large refactors.
-- After refactoring, **re-check all use cases** before the next commit.
+## 3️⃣ Key Features
+
+### **1. Schema-Driven Columns**
+
+* Reads `stringProperties`, `numberProperties`, `enumProperties` from MDMS.
+* Applies **color**, **order**, **required flags**, **hide/freeze settings**.
+
+### **2. Header Structure**
+
+* **Row 1 (hidden):** Technical column names.
+* **Row 2 (visible):** Localized names with color formatting.
+
+### **3. Dropdowns**
+
+* **Enum Dropdown:** Static list of values.
+* **Cascading Dropdown:** Dependent on the previous column’s selection.
+* **Multi-Select:** Multiple visible columns + hidden concatenated column for backend.
+
+### **4. Hidden Mapping Sheets**
+
+* Store **parent → child** boundaries.
+* Store **level → boundary lists**.
+* Maintain **localization mappings**.
+
+### **5. Cell Locking & Freezing**
+
+* Cells are **unlocked by default**.
+* Freeze columns when `freezeColumnIfFilled = true`.
+
+### **6. Sheet Protection**
+
+* Password-protected after setup.
+* Only unlocked cells are editable.
+
+---
+
+## 4️⃣ Workflow
+
+1. **Read** schema from MDMS.
+2. **Generate** columns & headers.
+3. **Add** dropdowns (enum/cascading).
+4. **Expand** multi-select columns.
+5. **Lock/Freeze** cells as per rules.
+6. **Protect** and deliver sheet to user.
+
+---
+
+## 5️⃣ Usage Cautions
+
+⚠ **Best Practices When Using Claude Max for Refactoring**
+
+* **Review all suggestions** carefully — some changes may be inaccurate.
+* **Test all working cases** before committing.
+* **Commit small, functional changes** instead of large refactors.
+* After each refactor, **validate all use cases** again.
+
+---
