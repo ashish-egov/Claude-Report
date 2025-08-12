@@ -1,9 +1,3 @@
-# 📄 Claude Max – Microplan Ingestion
-
-Here’s a polished version of your **Claude Max Usage Report** that keeps the structure but makes it presentation-ready, concise, and easy to read:
-
----
-
 # 📄 Claude Max Usage Report
 
 ## 1️⃣ Project Context
