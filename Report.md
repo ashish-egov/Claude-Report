@@ -43,3 +43,11 @@
 4. Expand multi-select columns.
 5. Lock/freeze cells as per rules.
 6. Protect sheet and deliver to user.
+
+---
+
+## ⚠️ Point to Note for Users
+- Always **review every change** suggested by Claude — its refactoring may not always be accurate.
+- **Test working use cases** after each change before committing.
+- Commit **small, working changes** rather than large refactors.
+- After refactoring, **re-check all use cases** before the next commit.
