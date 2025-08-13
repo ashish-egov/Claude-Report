@@ -10,14 +10,12 @@
 
 ## 2️⃣ Overview
 
-* Generates Excel templates **directly from MDMS JSON schema**.
-* Supports:
-
-  * Localized headers
-  * Color coding
-  * Dropdowns (simple + cascading)
-  * Multi-select values
-* Uses **hidden sheets** for mapping parent–child relationships and localization.
+* Generates **multi-sheet Excel templates** directly from MDMS JSON schema.
+* **Campaign Configuration Sheet**: First sheet with editable green-highlighted cells for campaign setup.
+* **Facility & User Sheets**: Schema-driven data entry with boundary dropdowns.
+* **Boundary Hierarchy Sheet**: Visual boundary relationships.
+* Supports localization, color coding, cascading dropdowns, multi-select values.
+* Uses **hidden helper sheets** for dropdown data and validation logic.
 
 ---
 
@@ -50,7 +48,13 @@
 * Cells are **unlocked by default**.
 * Freeze columns when `freezeColumnIfFilled = true`.
 
-### **6. Sheet Protection**
+### **6. Campaign Configuration**
+
+* **First sheet** with structured sections for campaign setup.
+* **Green-highlighted editable cells** for boundary names and campaign details.
+* **Protected layout** with only designated cells editable.
+
+### **7. Sheet Protection**
 
 * Password-protected after setup.
 * Only unlocked cells are editable.
@@ -59,12 +63,13 @@
 
 ## 4️⃣ Workflow
 
-1. **Read** schema from MDMS.
-2. **Generate** columns & headers.
-3. **Add** dropdowns (enum/cascading).
-4. **Expand** multi-select columns.
-5. **Lock/Freeze** cells as per rules.
-6. **Protect** and deliver sheet to user.
+1. **Fetch** campaign config & schemas from MDMS.
+2. **Create** campaign configuration sheet (first sheet).
+3. **Generate** facility & user sheets with schema-driven columns.
+4. **Add** boundary hierarchy sheet with visual relationships.
+5. **Apply** dropdowns (enum/cascading), multi-select formulas.
+6. **Lock/Freeze** cells as per rules, protect sheets.
+7. **Set** campaign config as active sheet and deliver.
 
 ---
 
@@ -74,19 +79,19 @@ The `excel-ingestion` service currently has:
 
 * **Files**:
 
-  * 33 Java files (main source code)
-  * 96 total files (including dependencies, compiled classes, config files, etc.)
+  * 34 Java files (main source code)
+  * Updated with new campaign configuration utilities
 
 * **Code Volume**:
 
-  * \~2,760 lines of Java code
+  * \~3,151 lines of Java code
   * Represents a complete microservice with:
 
     * Controllers (web layer)
     * Services (boundary, file store, localization, excel generation)
-    * Utilities (boundary hierarchy, schema creation, request conversion)
-    * Models
-    * Processors for different excel generation types
+    * Utilities (boundary hierarchy, schema creation, campaign config, request conversion)
+    * Models (boundary, excel, localization)
+    * Processors (microplan with campaign configuration support)
     * Configuration classes
   * **Proper Spring Boot structure** with layered architecture and **good refactored code**.
 
@@ -96,7 +101,7 @@ The `excel-ingestion` service currently has:
   * Some parts of the **design required manual refactoring** to align with project requirements.
   * During the refactoring phase, I provided **specific refactor instructions**, and Claude CLI performed the actual code rewriting.
 
-This reflects a **substantial and well-structured microservice**, with nearly **3K lines** of good refactored Java code.
+This reflects a **substantial and well-structured microservice**, with over **3K lines** of good refactored Java code including the new campaign configuration functionality.
 
 ---
 
@@ -107,7 +112,7 @@ This reflects a **substantial and well-structured microservice**, with nearly **
 * **Review all suggestions** carefully — some changes may be inaccurate.
 * **Test all working cases** before committing.
 * **Commit small, functional changes** instead of large refactors.
-* After each refactor, **validate all use cases** again.
+* After each refactor, **validate all use cases** again and then commit.
 
 ---
 
