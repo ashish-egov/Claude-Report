@@ -78,3 +78,10 @@
 * After each refactor, **validate all use cases** again.
 
 ---
+
+## 6️⃣ Recommended Practice for Ongoing Improvements
+
+It’s better to maintain a **dedicated `.md` file** to log changes and decisions, and update it periodically.
+This way, Claude Max (and future developers) will have a **clear, evolving view of the project context** and can provide more accurate, relevant refactoring suggestions.
+
+---
