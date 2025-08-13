@@ -120,3 +120,19 @@ This reflects a **substantial and well-structured microservice**, with over **3K
 
 Maintain a **dedicated `.md` file** to log changes and architectural decisions.
 Updating it regularly ensures Claude Max (and future developers) always have **accurate project context**, enabling **better and more relevant refactoring suggestions**.
+
+---
+
+## 8️⃣ Side Issues Fixed via Claude CLI
+
+### **1. YAML Duplicate Code Detection**
+* **Issue**: Duplicate configurations in service YAML files (visible in logs but easy to miss).
+* **Solution**: Copy-pasted logs into Claude CLI within cloned DevOps config repo.
+* **Result**: Claude automatically detected the service → identified YAML → found duplicate code → fixed it.
+
+### **2. Kafka Message Size Optimization in Project Service**
+* **Issue**: Message size increases dramatically when updating project dates.
+* **Investigation**: Asked Claude to check Kafka persistence in project-service for date change behavior.
+* **Finding**: Claude discovered that date updates were cascading to all child entities, sending entire bulk project arrays as single Kafka messages.
+* **Solution**: Implemented batch processing with batches of 100 projects.
+* **Result**: Reduced Kafka message size and improved system stability.
