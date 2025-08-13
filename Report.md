@@ -90,6 +90,12 @@ The `excel-ingestion` service currently has:
     * Configuration classes
   * **Proper Spring Boot structure** with layered architecture and **good refactored code**.
 
+* **Code Authoring Process**:
+
+  * All core code was **written by the Claude CLI coding agent**.
+  * Some parts of the **design required manual refactoring** to align with project requirements.
+  * During the refactoring phase, I provided **specific refactor instructions**, and Claude CLI performed the actual code rewriting.
+
 This reflects a **substantial and well-structured microservice**, with nearly **3K lines** of good refactored Java code.
 
 ---
@@ -109,5 +115,3 @@ This reflects a **substantial and well-structured microservice**, with nearly **
 
 Maintain a **dedicated `.md` file** to log changes and architectural decisions.
 Updating it regularly ensures Claude Max (and future developers) always have **accurate project context**, enabling **better and more relevant refactoring suggestions**.
-
----
