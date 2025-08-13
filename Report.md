@@ -1,3 +1,7 @@
+Here’s the updated version with **"production-ready"** replaced by **"good refactored code"**:
+
+---
+
 # 📄 Claude Max Usage Report
 
 ## 1️⃣ Project Context
@@ -68,7 +72,33 @@
 
 ---
 
-## 5️⃣ Usage Cautions
+## 5️⃣ Service Stats
+
+The `excel-ingestion` service currently has:
+
+* **Files**:
+
+  * 33 Java files (main source code)
+  * 96 total files (including dependencies, compiled classes, config files, etc.)
+
+* **Code Volume**:
+
+  * \~2,760 lines of Java code
+  * Represents a complete microservice with:
+
+    * Controllers (web layer)
+    * Services (boundary, file store, localization, excel generation)
+    * Utilities (boundary hierarchy, schema creation, request conversion)
+    * Models
+    * Processors for different excel generation types
+    * Configuration classes
+  * **Proper Spring Boot structure** with layered architecture and **good refactored code**.
+
+This reflects a **substantial and well-structured microservice**, with nearly **3K lines** of good refactored Java code.
+
+---
+
+## 6️⃣ Usage Cautions
 
 ⚠ **Best Practices When Using Claude Max for Refactoring**
 
@@ -79,9 +109,9 @@
 
 ---
 
-## 6️⃣ Recommended Practice for Ongoing Improvements
+## 7️⃣ Recommended Practice for Ongoing Improvements
 
-It’s better to maintain a **dedicated `.md` file** to log changes and decisions, and update it periodically.
-This way, Claude Max (and future developers) will have a **clear, evolving view of the project context** and can provide more accurate, relevant refactoring suggestions.
+Maintain a **dedicated `.md` file** to log changes and architectural decisions.
+Updating it regularly ensures Claude Max (and future developers) always have **accurate project context**, enabling **better and more relevant refactoring suggestions**.
 
 ---
